@@ -5,12 +5,12 @@ FROM node:12-slim AS base
 WORKDIR /app
 
 # Copy package.json and package-lock.json for dependency installation
-COPY --link package.json package-lock.json ./
+COPY package.json package-lock.json ./
 
 RUN npm install
 
 # Copy the application source code
-COPY --link . .
+COPY . .
 
 # Expose the application port
 EXPOSE 4002
